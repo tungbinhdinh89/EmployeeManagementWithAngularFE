@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Server", "EmployeeManagement\EmployeeManagement.Server\EmployeeManagement.Server.csproj", "{4DE52201-150A-464C-B8AB-CA85105677F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Server", "EmployeeManagement\EmployeeManagement.Server\EmployeeManagement.Server.csproj", "{4DE52201-150A-464C-B8AB-CA85105677F3}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "employeemanagement.client", "EmployeeManagement\employeemanagement.client\employeemanagement.client.esproj", "{CBCD3F36-F034-4588-B2E4-BA120991ED07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Core", "EmployeeManagement.Core\EmployeeManagement.Core.csproj", "{80AB58C1-DC51-4B3E-BD40-AE0EF2230AEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Core", "EmployeeManagement.Core\EmployeeManagement.Core.csproj", "{80AB58C1-DC51-4B3E-BD40-AE0EF2230AEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Infra", "EmployeeManagement.Infra\EmployeeManagement.Infra.csproj", "{67AF4347-5935-40F9-9987-641FA92AAE33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Shared", "EmployeeManagement.Shared\EmployeeManagement.Shared.csproj", "{D3D20F20-08C5-4C71-BBC0-18E1EFCBA35F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Shared", "EmployeeManagement.Shared\EmployeeManagement.Shared.csproj", "{D3D20F20-08C5-4C71-BBC0-18E1EFCBA35F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Utility", "EmployeeManagement.Utility\EmployeeManagement.Utility.csproj", "{36AE0D9B-93B1-4014-856E-810B4379A846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Utility", "EmployeeManagement.Utility\EmployeeManagement.Utility.csproj", "{36AE0D9B-93B1-4014-856E-810B4379A846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{80AB58C1-DC51-4B3E-BD40-AE0EF2230AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80AB58C1-DC51-4B3E-BD40-AE0EF2230AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80AB58C1-DC51-4B3E-BD40-AE0EF2230AEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67AF4347-5935-40F9-9987-641FA92AAE33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67AF4347-5935-40F9-9987-641FA92AAE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67AF4347-5935-40F9-9987-641FA92AAE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67AF4347-5935-40F9-9987-641FA92AAE33}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3D20F20-08C5-4C71-BBC0-18E1EFCBA35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3D20F20-08C5-4C71-BBC0-18E1EFCBA35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3D20F20-08C5-4C71-BBC0-18E1EFCBA35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
