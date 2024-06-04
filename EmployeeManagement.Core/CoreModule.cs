@@ -1,4 +1,6 @@
 ﻿using EmployeeManagement.Core.Db;
+using EmployeeManagement.Core.Implementations;
+using EmployeeManagement.Core.Services;
 using EmployeeManagement.Shared.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,8 +21,8 @@ namespace EmployeeManagement.Core
                        .EnableDetailedErrors(dbOptions.EnableDetailedErrors);
             });
 
-            return services;
+            return services
+                .AddScoped<IEmployeeService, EmployeeService>();
         }
     }
 }
-//options.UseSqlServer("Server=TUNGBINHDINH89\\SQLEXPRESS;Database=CarLogDev;Trusted_Connection=True;TrustServerCertificate=true;")
