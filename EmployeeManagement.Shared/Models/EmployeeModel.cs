@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EmployeeManagement.Shared.Entities;
+namespace EmployeeManagement.Shared.Models;
 
-public class Employee
+public class EmployeeModel
 {
     public int Id { get; set; }
 
