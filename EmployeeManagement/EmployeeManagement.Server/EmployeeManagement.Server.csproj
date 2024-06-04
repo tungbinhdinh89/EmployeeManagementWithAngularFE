@@ -22,9 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\EmployeeManagement.Abstraction\EmployeeManagement.Abstraction.csproj" />
     <ProjectReference Include="..\..\EmployeeManagement.Core\EmployeeManagement.Core.csproj" />
-    <ProjectReference Include="..\..\EmployeeManagement.Infra\EmployeeManagement.Infra.csproj" />
     <ProjectReference Include="..\employeemanagement.client\employeemanagement.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
