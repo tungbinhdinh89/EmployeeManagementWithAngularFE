@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeManagement.Abstraction\EmployeeManagement.Abstraction.csproj" />
     <ProjectReference Include="..\EmployeeManagement.Shared\EmployeeManagement.Shared.csproj" />
     <ProjectReference Include="..\EmployeeManagement.Utility\EmployeeManagement.Utility.csproj" />
   </ItemGroup>
