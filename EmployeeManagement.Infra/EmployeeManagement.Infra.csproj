@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagement.Shared\EmployeeManagement.Shared.csproj" />
+    <ProjectReference Include="..\EmployeeManagement.Utility\EmployeeManagement.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

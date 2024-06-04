@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Shared",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Utility", "EmployeeManagement.Utility\EmployeeManagement.Utility.csproj", "{36AE0D9B-93B1-4014-856E-810B4379A846}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Abstraction", "EmployeeManagement.Abstraction\EmployeeManagement.Abstraction.csproj", "{AA904848-024C-46BB-B99D-BABFA7302DC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{36AE0D9B-93B1-4014-856E-810B4379A846}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36AE0D9B-93B1-4014-856E-810B4379A846}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36AE0D9B-93B1-4014-856E-810B4379A846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA904848-024C-46BB-B99D-BABFA7302DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA904848-024C-46BB-B99D-BABFA7302DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA904848-024C-46BB-B99D-BABFA7302DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA904848-024C-46BB-B99D-BABFA7302DC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
