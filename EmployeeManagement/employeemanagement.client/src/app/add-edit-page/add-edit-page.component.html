@@ -8,7 +8,7 @@
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Name</mat-label>
         <input matInput type="text" placeholder="Ex. Stephen Nguyen" formControlName="name"/>
-        <div *ngIf="employeeForm.get('name')!.invalid && employeeForm.get('name')!.touched">
+        <div *ngIf="employeeForm.get('name')!.invalid && employeeForm.get('name')!.touched" class="error">
           Name is required and must be less than 256 characters.
         </div>
       </mat-form-field>
@@ -16,8 +16,17 @@
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Email</mat-label>
         <input matInput type="email" placeholder="Ex. example@gmail.com" formControlName="email"/>
-        <div *ngIf="employeeForm.get('email')!.invalid && employeeForm.get('email')!.touched">
-          Email is required and must be less than 255 characters.
+        <div *ngIf="employeeForm.get('email')!.hasError('required') && employeeForm.get('email')!.touched" class="error">
+          Email is required.
+        </div>
+        <div *ngIf="employeeForm.get('email')!.hasError('maxlength') && employeeForm.get('email')!.touched" class="error">
+          Email must be less than 255 characters.
+        </div>
+        <div *ngIf="employeeForm.get('email')!.hasError('email') && employeeForm.get('email')!.touched" class="error">
+          Invalid email format.
+        </div>
+        <div *ngIf="emailExistError" class="error">
+          Email already exists.
         </div>
       </mat-form-field>
     </div>
@@ -35,13 +44,6 @@
       </mat-form-field>
     </div>
 
-    <!-- <div class="row">
-      <mat-radio-group aria-label="Select an option" formControlName="gender">
-        <mat-label><b>Gender</b></mat-label>
-        <mat-radio-button value="Male">Male</mat-radio-button>
-        <mat-radio-button value="Female">Female</mat-radio-button>
-      </mat-radio-group>
-    </div> -->
     <div class="row">
       <mat-form-field>
         <mat-label>Gender</mat-label>

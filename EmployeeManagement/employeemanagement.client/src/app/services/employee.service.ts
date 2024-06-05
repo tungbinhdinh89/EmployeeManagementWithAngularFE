@@ -7,20 +7,18 @@ import { EmployeeModel } from '../../models/employee.model';
   providedIn: 'root',
 })
 export class EmployeeService {
+  private _apiURL = 'https://localhost:7142/Employee';
   constructor(private _http: HttpClient) {}
 
   addEmployee(data: EmployeeModel): Observable<any> {
-    return this._http.post(
-      'https://localhost:7142/Employee/add-employee',
-      data
-    );
+    return this._http.post(`${this._apiURL}/add-employee`, data);
   }
 
   getEmployee(id: number): Observable<any> {
-    return this._http.get(`https://localhost:7142/Employee/get-employee/${id}`);
+    return this._http.get(`${this._apiURL}/get-employee/${id}`);
   }
 
   getEmployeeList(): Observable<any> {
-    return this._http.get('https://localhost:7142/Employee/get-employees');
+    return this._http.get(`${this._apiURL}/get-employees`);
   }
 }
