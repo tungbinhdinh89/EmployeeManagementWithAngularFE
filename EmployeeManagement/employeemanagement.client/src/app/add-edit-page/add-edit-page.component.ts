@@ -1,9 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { EmployeeModel } from '../../models/employee.model';
 import { EmployeeService } from '../services/employee.service';
 
 @Component({
@@ -16,7 +14,6 @@ export class AddEditPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private snackBar: MatSnackBar,
     private _dialogRef: MatDialogRef<AddEditPageComponent>,
     private _employeeService: EmployeeService,
