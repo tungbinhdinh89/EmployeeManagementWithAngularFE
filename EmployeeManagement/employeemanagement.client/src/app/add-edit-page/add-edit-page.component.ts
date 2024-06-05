@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -10,7 +10,9 @@ import { EmployeeService } from '../services/employee.service';
   styleUrls: ['./add-edit-page.component.css'],
 })
 export class AddEditPageComponent implements OnInit {
+  @Output() employeeAdded = new EventEmitter<void>();
   employeeForm: FormGroup;
+  emailExistError: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -38,11 +40,17 @@ export class AddEditPageComponent implements OnInit {
     if (this.employeeForm.valid) {
       this._employeeService.addEmployee(this.employeeForm.value).subscribe({
         next: (val: any) => {
-          alert('Employee added succesfully');
-          this._dialogRef.close(true);
-        },
-        error: (err: any) => {
-          console.log(err);
+          if (!val.success) {
+            if (val.code === 'EmailExist') {
+              this.emailExistError = true;
+            }
+          } else {
+            this.snackBar.open('Employee added successfully', 'Close', {
+              duration: 3000,
+            });
+            this.employeeAdded.emit();
+            this._dialogRef.close(true);
+          }
         },
       });
     } else {
