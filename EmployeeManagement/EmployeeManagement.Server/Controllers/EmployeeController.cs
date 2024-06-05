@@ -15,7 +15,7 @@ namespace EmployeeManagement.Server.Controllers
         /// Get list of employee
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("get-employees")]
         public async Task<IActionResult> GetEmployeeList([FromQuery] PagingRequest filter)
         {
             var list = await employeeService.GetEmployeeListAsync(filter ?? new());
@@ -27,7 +27,7 @@ namespace EmployeeManagement.Server.Controllers
         /// </summary>
         /// <param name="id">Employee's id</param>
         /// <returns></returns>
-        [HttpGet("{id}")]
+        [HttpGet("get-employee/{id}")]
         public async Task<IActionResult> GetEmployee(int id)
         {
             var user = await employeeService.GetEmployeeByIdAsync(id);
@@ -39,7 +39,7 @@ namespace EmployeeManagement.Server.Controllers
         /// </summary>
         /// <param name="employee"><see cref="EmployeeModel"/></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("add-employee")]
         public async Task<IActionResult> AddEmployee(EmployeeModel employee)
         {
             if (!ModelState.IsValid)

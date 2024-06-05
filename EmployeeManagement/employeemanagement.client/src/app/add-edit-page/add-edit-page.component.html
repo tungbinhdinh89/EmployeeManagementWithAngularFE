@@ -1,0 +1,60 @@
+<div mat-dialog-title>
+  <h1>Employee Form</h1>
+</div>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Ex. Stephen Nguyen" formControlName="name"/>
+        <div *ngIf="employeeForm.get('name')!.invalid && employeeForm.get('name')!.touched">
+          Name is required and must be less than 256 characters.
+        </div>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Ex. example@gmail.com" formControlName="email"/>
+        <div *ngIf="employeeForm.get('email')!.invalid && employeeForm.get('email')!.touched">
+          Email is required and must be less than 255 characters.
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" placeholder="Ex. 0942211112" formControlName="phone"/>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" placeholder="Ex. Binh Chanh" formControlName="address"/>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-label><b>Gender</b></mat-label>
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>D.O.B</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob"/>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+</form>

@@ -1,37 +1,18 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { MatDialog } from '@angular/material/dialog';
+import { AddEditPageComponent } from './add-edit-page/add-edit-page.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+export class AppComponent {
+  title = 'employee-management-app';
 
-  constructor(private http: HttpClient) {}
+  constructor(private _dialog: MatDialog) {}
 
-  ngOnInit() {
-    this.getForecasts();
+  openAddEditForm() {
+    this._dialog.open(AddEditPageComponent);
   }
-
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
-
-  title = 'employeemanagement.client';
 }
