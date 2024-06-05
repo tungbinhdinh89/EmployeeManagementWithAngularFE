@@ -1,19 +1,23 @@
-<mat-toolbar color="primary">
-    <span>Employee Management App</span>
-    <span class="example-spacer"></span>
-    <button class="add-employee" mat-raised-button (click)="openAddEditForm()">Add Employee</button>
-  </mat-toolbar>
+      <mat-toolbar color="primary">
+        <span>Employee Management App</span>
+        <span class="example-spacer"></span>
+        <button class="add-employee" mat-raised-button (click)="openAddEditForm()">Add Employee</button>
+      </mat-toolbar>
+
+      <mat-sidenav-container class="example-container">
+          <mat-sidenav mode="side" opened class="example-sidenav">
+            <mat-nav-list>
+              <a mat-list-item routerLink="/">Home</a>
+              <a mat-list-item routerLink="/employees">Employee Index</a>
+              <a mat-list-item routerLink="/employee">Employee Detail</a>
+              <a mat-list-item routerLink="/contact">Contact</a>
+            </mat-nav-list>
+          </mat-sidenav>
+
+          <mat-sidenav-content class="conent">
+            <router-outlet></router-outlet>
+          </mat-sidenav-content>
+      </mat-sidenav-container>
+
   
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened class="example-sidenav">
-      <mat-nav-list>
-        <a mat-list-item routerLink="/">Home</a>
-        <a mat-list-item routerLink="/employees">Employee Index</a>
-        <a mat-list-item routerLink="/employee">Employee Detail</a>
-        <a mat-list-item routerLink="/contact">Contact</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  

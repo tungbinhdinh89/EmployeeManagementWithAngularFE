@@ -1,0 +1,20 @@
+.contact-info {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+  }
+  
+  .mat-card {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+  }
+  
+  .mat-card {
+    max-width: 400px; 
+    width: 100%;
+  }
