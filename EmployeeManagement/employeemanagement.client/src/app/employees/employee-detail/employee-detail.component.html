@@ -1,0 +1,16 @@
+<p>employee-detail works!</p>
+
+<div *ngIf="employee" class="employee-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ employee.name }}</mat-card-title>
+      <mat-card-subtitle>{{ employee.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Gender:</strong> {{ employee.gender }}</p>
+      <p><strong>Phone:</strong> {{ employee.phone }}</p>
+      <p><strong>Date of Birth:</strong> {{ employee.dob | date }}</p>
+      <p><strong>Address:</strong> {{ employee.address }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

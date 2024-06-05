@@ -23,9 +23,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { EmployeeIndexComponent } from './employees/employee-index/employee-index.component';
+import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [AppComponent, AddEditPageComponent, EmployeeIndexComponent],
+  declarations: [
+    AppComponent,
+    AddEditPageComponent,
+    EmployeeIndexComponent,
+    EmployeeDetailComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -50,6 +57,7 @@ import { EmployeeIndexComponent } from './employees/employee-index/employee-inde
     MatTableModule,
     MatSidenavModule,
     BrowserAnimationsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

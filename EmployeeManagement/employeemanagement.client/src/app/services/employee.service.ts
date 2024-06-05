@@ -17,7 +17,7 @@ export class EmployeeService {
   }
 
   getEmployee(id: number): Observable<any> {
-    return this._http.get(`https://localhost:7142/Employee/get-employee${id}`);
+    return this._http.get(`https://localhost:7142/Employee/get-employee/${id}`);
   }
 
   getEmployeeList(): Observable<any> {
