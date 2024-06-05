@@ -1,0 +1,25 @@
+mat-card {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  mat-list-item {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

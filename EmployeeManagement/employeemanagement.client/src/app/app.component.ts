@@ -5,7 +5,7 @@ import { AddEditPageComponent } from './add-edit-page/add-edit-page.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'employee-management-app';

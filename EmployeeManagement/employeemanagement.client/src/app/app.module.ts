@@ -20,12 +20,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AddEditPageComponent, // Ensure this is included in the declarations
-  ],
+  declarations: [AppComponent, AddEditPageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -45,6 +45,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatListModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
