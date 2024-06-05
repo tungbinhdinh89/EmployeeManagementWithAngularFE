@@ -1,3 +1,31 @@
 ﻿.example-spacer {
     flex: 1 1 auto;
   }
+  .add-employee {
+    margin-right: 28px;
+  }
+
+  .example-container {
+    display: flex;
+    height: calc(100vh - 64px); 
+  }
+  
+  .example-sidenav {
+    width: 10%; 
+    min-width: 200px; 
+  }
+  
+  mat-sidenav-content {
+    width: 90%; 
+  }
+  
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
