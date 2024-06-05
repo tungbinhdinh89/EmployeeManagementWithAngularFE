@@ -3,6 +3,7 @@ using EmployeeManagement.Core.Services;
 using EmployeeManagement.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace EmployeeManagement.Server.Controllers
 {
     [ApiController]
@@ -49,6 +50,24 @@ namespace EmployeeManagement.Server.Controllers
 
             var result = await employeeService.AddEmployeeAsync(employee);
             return Ok(result);
+        }
+
+        /// <summary>
+        /// Generate new employees 
+        /// </summary>
+        /// <param name="count">Employee's count</param>
+        /// <returns></returns>
+        [HttpPost("generate-random-employees")]
+        public async Task<IActionResult> GenerateRandomEmployees(int count)
+        {
+            var result = await employeeService.GenerateRandomEmployeesAsync(count);
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Code.ToString());
         }
 
     }
