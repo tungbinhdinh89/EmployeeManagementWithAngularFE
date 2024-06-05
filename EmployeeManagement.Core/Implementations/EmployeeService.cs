@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Core.Common;
+﻿using Bogus;
+using EmployeeManagement.Core.Common;
 using EmployeeManagement.Core.Db;
 using EmployeeManagement.Core.Exceptions;
 using EmployeeManagement.Core.Extensions;
@@ -47,6 +48,42 @@ public class EmployeeService(IDbContextFactory<ApplicationDbContext> dbContextFa
             Dob = entity.Dob,
             Address = entity.Address
         });
+    }
+
+    public async Task<Result<List<EmployeeModel>>> GenerateRandomEmployeesAsync(int count)
+    {
+        if (count <= 0)
+        {
+            throw new ArgumentException("Count must be greater than zero", nameof(count));
+        }
+
+        using var db = dbContextFactory.CreateDbContext();
+
+        var faker = new Faker<Employee>()
+            .RuleFor(e => e.Name, f => f.Name.FullName())
+            .RuleFor(e => e.Email, (f, e) => f.Internet.Email(e.Name))
+            .RuleFor(e => e.Gender, f => f.PickRandom<string>("Male", "Female"))
+            .RuleFor(e => e.Phone, f => f.Phone.PhoneNumber())
+            .RuleFor(e => e.Dob, f => f.Date.Past(30, DateTime.Now.AddYears(-20)))
+            .RuleFor(e => e.Address, f => f.Address.FullAddress());
+
+        var randomEmployees = faker.Generate(count);
+
+        db.Employees.AddRange(randomEmployees);
+        await db.SaveChangesAsync();
+
+        var result = randomEmployees.Select(e => new EmployeeModel
+        {
+            Id = e.Id,
+            Name = e.Name,
+            Email = e.Email,
+            Gender = e.Gender,
+            Phone = e.Phone,
+            Dob = e.Dob,
+            Address = e.Address
+        }).ToList();
+
+        return new Result<List<EmployeeModel>>(result);
     }
 
     public async Task<EmployeeModel> GetEmployeeByIdAsync(int id)

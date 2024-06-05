@@ -25,5 +25,12 @@ public interface IEmployeeService
     /// <param name="id">Employee's id</param>
     /// <returns></returns>
     Task<EmployeeModel> GetEmployeeByIdAsync(int id);
+
+    /// <summary>
+    /// Generate new employees 
+    /// </summary>
+    /// <param name="count">Employee's count</param>
+    /// <returns></returns>
+    Task<Result<List<EmployeeModel>>> GenerateRandomEmployeesAsync(int count);
 }
 
