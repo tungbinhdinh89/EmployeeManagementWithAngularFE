@@ -17,22 +17,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { EmployeeIndexComponent } from './employees/employee-index/employee-index.component';
-import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
-import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AddEditPageComponent,
-    EmployeeIndexComponent,
-    EmployeeDetailComponent,
-  ],
+  declarations: [AppComponent, AddEditPageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -41,23 +28,15 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
     MatSnackBarModule,
     MatListModule,
-    MatPaginatorModule,
-    MatTableModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
