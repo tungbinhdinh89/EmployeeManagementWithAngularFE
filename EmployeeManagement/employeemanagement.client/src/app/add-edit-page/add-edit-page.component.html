@@ -26,6 +26,7 @@
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Phone</mat-label>
         <input matInput type="text" placeholder="Ex. 0942211112" formControlName="phone"/>
+    <mat-icon matSuffix>phone</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
@@ -34,12 +35,21 @@
       </mat-form-field>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <mat-radio-group aria-label="Select an option" formControlName="gender">
         <mat-label><b>Gender</b></mat-label>
         <mat-radio-button value="Male">Male</mat-radio-button>
         <mat-radio-button value="Female">Female</mat-radio-button>
       </mat-radio-group>
+    </div> -->
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <div class="row">

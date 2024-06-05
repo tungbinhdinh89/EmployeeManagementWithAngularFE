@@ -17,6 +17,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent, AddEditPageComponent],
@@ -37,6 +40,9 @@ import { MatListModule } from '@angular/material/list';
     MatListModule,
     MatSidenavModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

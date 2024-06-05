@@ -1,16 +1,52 @@
-<p>employee-detail works!</p>
+<mat-card>
+  <div mat-card-title>
+    <h1>Employee Details</h1>
+  </div>
 
-<div *ngIf="employee" class="employee-card">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ employee.name }}</mat-card-title>
-      <mat-card-subtitle>{{ employee.email }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p><strong>Gender:</strong> {{ employee.gender }}</p>
-      <p><strong>Phone:</strong> {{ employee.phone }}</p>
-      <p><strong>Date of Birth:</strong> {{ employee.dob | date }}</p>
-      <p><strong>Address:</strong> {{ employee.address }}</p>
-    </mat-card-content>
-  </mat-card>
-</div>
+  <div mat-card-content *ngIf="employee">
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width" >
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [value]="employee.name"  />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" >
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [value]="employee.email" disabled />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width" >
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" [value]="employee.phone"  />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" >
+        <mat-label>Address</mat-label>
+        <input matInput type="text" [value]="employee.address"  />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select [value]="employee.gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width" >
+        <mat-label>D.O.B</mat-label>
+        <input matInput type="text" [value]="employee.dob | date:'MM/dd/yyyy'"  />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/employees/employees-index">Back to List</button>
+  </div>
+</mat-card>

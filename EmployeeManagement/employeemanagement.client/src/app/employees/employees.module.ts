@@ -10,6 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [EmployeeIndexComponent, EmployeeDetailComponent],
@@ -22,6 +28,12 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     EmployeesRoutingModule,
     MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule,
   ],
   providers: [EmployeeService],
 })
