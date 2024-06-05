@@ -15,7 +15,20 @@ public class Program
         builder.Services.AddCoreServices(dbOptions => builder.Configuration.GetSection(DbOptions.SECTION).Bind(dbOptions));
 
 
+        //
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowSpecificOrigin",
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+        });
+
         builder.Services.AddControllers();
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -36,8 +49,11 @@ public class Program
             app.UseHttpsRedirection();
 
         }
+        app.UseDefaultFiles();
+        app.UseStaticFiles();
+        app.UseRouting();
 
-
+        app.UseCors("AllowSpecificOrigin");
 
         app.UseAuthorization();
 
