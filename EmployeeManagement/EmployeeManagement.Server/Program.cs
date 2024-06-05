@@ -15,7 +15,7 @@ public class Program
         builder.Services.AddCoreServices(dbOptions => builder.Configuration.GetSection(DbOptions.SECTION).Bind(dbOptions));
 
 
-        //
+        // Config CORS with Angular
         builder.Services.AddCors(options =>
         {
             options.AddPolicy("AllowSpecificOrigin",
